@@ -1,0 +1,152 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #9cf;
+}
+header{
+	height: 60px;
+	/*background-color: #3c3;*/
+	}
+header img{
+	float: left;
+	margin-top: 7px;
+}
+header .login{
+	float: right;
+	line-height: 60px;
+}
+header .login .usename,header .login a{
+	font-weight: 700;
+	color: #f03;
+	text-decoration: none;
+}
+header h1{
+	color: #f03;
+	line-height: 60px;
+	font-size: 36px;
+	margin: 0;
+	margin-left: 55px;
+	font-weight: 700;
+	font-style:italic;
+}
+header h1 span{
+	font-size: 22px;
+}
+
+/* 登录模块的样式 */
+.whole-page {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background: #cff;
+				
+}
+.app-login .login-container {
+	background:#cf9;
+	width: 400px;
+	margin: 100px auto;
+	padding: 10px 20px;
+	border-radius: 10px;
+}
+.app-login h2 {
+	height: 40px;
+	line-height: 40px;
+	border-bottom: 1px solid #efefef;
+	font-size: 24px;
+	text-align: center;
+}
+.app-login .form-group {
+	padding: 10px 0;
+	line-height: 30px;
+	margin-bottom: 0px;
+}
+.app-login label {
+	width: 100px;
+	display: inline-block;
+	text-align: right;
+}
+.app-login input {
+	width: 220px;
+	padding-left: 10px;
+	border-radius: 5px;
+}
+.app-login button {
+	width: 300px;
+	margin: 0 auto;
+	
+}
+.app-login .btn-container {
+
+	text-align: center;
+	padding-bottom: 30px;
+}
+.app-login .error-container {
+	height: 35px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    text-indent: 105px;
+    overflow: hidden;
+}
+/* 列表样式 */
+aside{
+	margin-left: 10px;
+	float: left;
+	width: 240px;
+	background-color: #0c0;
+	border-radius: 20px;
+	margin-top: 10px;
+	font-weight: 700;
+	border: 1px solid black;
+}
+aside h3 {
+	font-size: 18px;
+	color: #36c;
+	font-weight: 700;
+} 
+aside ul{
+	padding-left: 40px;
+	margin-bottom: 20px;	
+}
+/**/
+/* 用户提交页面 */
+section{
+	border: 1px solid black;
+	border-radius: 10px;
+	margin-top: 10px;
+	height: 500px;
+	margin-left: 260px;
+	background-color: #0c0;
+	margin-right: 10px;
+}
+.app-main{
+	padding: 30px;
+}
+.main-inner {
+	padding: 10px 30px;
+}
+.main-inner h2 {
+	font-size: 28px;
+	border-bottom: 1px solid #efefef;
+	line-height: 60px;
+	margin-bottom: 40px;
+}
+.main-inner .row {
+	height: 60px;
+}
+.main-inner .user-list .col-lg-1,
+.main-inner .user-list .col-lg-2 {
+	text-align: center;
+}
+.main-inner .btn {
+	margin-top: 20px;
+}
+
+.main-inner .news-list .col-lg-3,
+.main-inner .news-list .col-lg-2,
+.main-inner .news-list .col-lg-4 {
+	text-align: center;
+}

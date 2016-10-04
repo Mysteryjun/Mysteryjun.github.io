@@ -1,0 +1,73 @@
+.slider {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	z-index: 9999999999999999999;
+}
+.slider .container {
+	width: 50px;
+	padding-top: 50px;
+	background: #eeeeee;
+	text-align: center;
+	height: 100%;
+	font-size: 12px;
+}
+.slider li {
+	margin-bottom: 10px;
+	width: 50px;
+	position: relative;
+	padding: 6px 0;
+	cursor: pointer;
+	z-index: 999;
+}
+.slider li div {
+	position: absolute;
+	left: 50px;
+	top: 0;
+	width: 200px;
+	text-align: left;
+	padding: 16px;
+	background: #f0f0f0;
+	border: 1px solid #ccc;
+	border-left: 0;
+	display: none;
+
+}
+.slider li div img {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+.slider li div h4 {
+	padding-bottom: 8px;
+}
+.slider li > img {
+	padding-bottom: 8px;
+}
+.slider li:hover {
+	background: #fafafa;
+}
+.slider li:hover div {
+	display: block;
+	background: #fafafa;
+}
+.slider .arrow {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	left: 0;
+	bottom: 50px;
+	background-image: url(https://gss0.bdstatic.com/5eR1dDebRNRTm2_p8IuM_a/v5/sR/uk/5e/k_/iY/4/slidetoolbar-icon.png);
+	background-color: #ccc;
+	background-position: -49px -73px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	z-index: 9999;
+}
+.slider .arrow:hover {
+	background-color: #efefef;
+}
+.slider .arrow.close {
+	background-position: -44px -161px;
+}

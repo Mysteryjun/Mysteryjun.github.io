@@ -1,0 +1,39 @@
+	.hotSearch {
+		width:1000px;
+		height:20px;
+		margin: -9px auto;
+	}
+	.hotSearch .container{
+		width:658px;
+		height:20px;
+		margin: 0 auto;
+		padding-left: 48px;
+	}
+	.hotSearch .container ul{
+		list-style-type:none;
+	}
+	.hotSearch .container ul li{
+		float:left;
+		font-size: 12px;
+	    line-height: 20px;
+	}
+	.hotSearch .container ul li a{
+		text-decoration: none;
+		 color: #666;
+		 margin-right:20px;
+	}
+	.hotSearch .container ul li:first-child{
+		display: block;
+		width:20px;
+		height: 20px;
+		position: relative;
+		top:2px;
+		background: url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/v5/0W/zO/-A/q4/0Z/4/index_widthlg.png) -159px -260px no-repeat;
+	}
+	.hotSearch .container ul li:nth-child(5) a{
+		color:#f30;
+	}
+	.hotSearch .container ul li:hover a{
+		text-decoration: underline;
+		color:#f30;
+	}

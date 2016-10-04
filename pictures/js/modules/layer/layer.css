@@ -1,0 +1,55 @@
+.layer {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: -webkit-linear-gradient(top,#fff,#ccc 20%,#666);
+	display: none;
+}
+.layer .navbar {
+	height: 60px;
+	background: #000;
+	color: white;
+}
+.layer .navbar.hide {
+	display: none;
+}
+.layer .navbar .back {
+	float: left;
+	position: relative;
+	left:  -9px;
+    top: 16px;
+}
+.layer .navbar .arrow {
+	position: absolute;
+	border-right: 20px solid white;
+	border-left: 20px solid transparent;
+	border-top: 14px solid transparent;
+	border-bottom: 14px solid transparent;
+}
+.layer .navbar .arrow.green {
+	left: 4px;
+	border-right: 20px solid #000;
+}
+.layer .navbar h1 {
+	text-align: center;
+	line-height: 60px;
+	text-indent: 20px;
+}
+
+/* 图片容器样式 */
+.layer .img-container {
+	position: absolute;
+	height: 450px;
+	top: -40px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+}
+.layer .img-container img {
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align: middle;
+}

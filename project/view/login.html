@@ -1,0 +1,22 @@
+<div class="app-login whole-page">
+	<div class="login-container">
+		<h2>请您登录</h2>
+		<form name="login" ng-submit="submit()">
+			<div class="form-group">
+				<label for="user_name">用户名：</label>
+				<input id="user_name" name="username" ng-model="user.username" type="text" placeholder="请输入用户名" required>
+			</div>
+			<div class="form-group">
+				<label for="pass_word">密&emsp;码：</label>
+				<input id="pass_word" name="password" ng-model="user.password" type="password" placeholder="请输入密码" required>
+			</div>
+			<div class="form-group text-danger error-container">
+				<span ng-show="login.username.$dirty && login.username.$invalid">请输入用户名</span>
+				<span ng-show="login.password.$dirty && login.password.$invalid">请输入密码</span>
+			</div>
+			<div class="form-group btn-container">
+				<button ng-disabled="login.$invalid" type="submit" class="btn btn-success">提交</button>
+			</div>
+		</form>
+	</div>
+</div>

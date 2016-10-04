@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, user-scalable=no">
+</head>
+<body>
+
+<div id="app">
+	<section id="list" class="list">
+		<header class="nav">
+			<div class="change"><span class="arrow"></span><span class="arrow green"></span></div>
+			<div class="login"><a href="">登录</a></div>
+			<h1>My Images</h1>
+		</header>
+		<div class="search">
+			<input type="text" class="search-input" placeholder='搜索你想要的图片'>
+			<span class="search-btn">搜一搜</span>
+		</div>
+		<ul class="navlist clearfix">
+			<li data-id="0">摄影</li>
+			<li data-id="1">明星</li>
+			<li data-id="2">壁纸</li>
+			<li data-id="3">宠物</li>
+			<li data-id="4">动漫</li>
+			<li data-id="5">风景</li>
+			<li data-id="6">头像</li>
+			<li data-id="7">人物</li>
+		</ul> 
+		<div class="image-list">
+			<div class="left-list"></div>
+			<div class="right-list"></div>
+		</div>
+		<div class="go-top"><a href="#list">返回顶部</a></div>
+	</section>
+
+	<section id="layer" class="layer"></section>
+</div>
+<script type="text/template" id="layer_tpl">
+	<div class="img-container" style="<%=styles%>">
+		<img src="<%=url%>"alt="">
+	</div>
+	<header class="navbar hide">
+		<div class="back"><span class="arrow"></span><span class="arrow green"></span></div>
+		<h1 class="title"><%=title%></h1>
+	</header>
+
+</script>
+
+<script type="text/javascript" src="js/sea.js"></script>
+<script type="text/javascript" src="js/lib/seajs-css.js"></script>
+<script type="text/javascript" src="js/lib/zepto.js"></script>
+<script type="text/javascript" src="js/lib/zepto.touch.js"></script>
+<script type="text/javascript" src="js/lib/underscore.js"></script>
+<script type="text/javascript" src="js/lib/backbone.js"></script>
+
+
+<script type="text/javascript">	
+	// 将js目录下面的app入口文件引入进来
+	seajs.use('app', function (app) {
+		// app.install();
+		app();
+	})
+</script>
+
+</body>
+</html>

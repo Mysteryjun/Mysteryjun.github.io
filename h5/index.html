@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="" content="">
+<title>元素周期表</title>
+<style>
+html, body {
+	height: 100%;
+}
+body {
+	background: url(3.jpg) center center;
+	margin: 0;
+	overflow: hidden;
+}
+.stage{
+	width: 1000px;
+	height: 800px;
+	margin: 400px auto;
+	perspective:3000px;
+}
+.stage .unit{
+	width: 1000px;
+	height: 800px;
+	position: relative;
+	transform-style:preserve-3d;
+ 	transition:all 0.5s ease 0s;
+ 	text-align: center;
+}
+.menu {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+}
+span {
+	width: 30px;
+	height: 40px;
+	font-family: Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 40px;
+	font-weight: bold;
+	color: rgba(0,0,255,0.8);
+    text-shadow: 0 0 10px rgba(0,0,0,0.95);
+	box-shadow: 0px 0px 12px rgba(0,255,255,0.5);
+	border: 1px solid rgba(127,255,255,0.75);
+	text-align: center;
+	cursor: default;
+	transition:all 3s ease 0s;
+	position: absolute;
+}
+
+span:hover {
+	box-shadow: 0px 0px 12px rgba(0,255,255,0.75);
+	border: 1px solid rgba(127,255,255,0.75);
+}
+
+button {
+	color: rgba(127,255,255,0.75);
+	background: transparent;
+	outline: 1px solid rgba(127,255,255,0.75);
+	border: 0px;
+	padding: 5px 10px;
+	cursor: pointer;
+}
+button:hover {
+	background-color: rgba(0,255,255,0.5);
+}
+.tips{
+	position: absolute;
+	left: 50px;
+	bottom: 30px;
+	color: rgb(255,204,0);
+	font-size: 18px;
+	font-weight: bold;
+    text-shadow: 0 0 10px rgba(0,0,0,0.95);
+}
+
+</style>
+</head>
+<body>
+
+	<div class="stage">
+		<div class="unit">
+		
+		</div>
+	</div>
+
+	<div class="menu">
+		<div class="tips">Tips：滚轮按住拖动可查看3D效果</div>
+		<button class="table">表格型</button>
+		<button class="ball">球型</button>
+		<button class="luoxuan">螺旋型</button>
+		<button class="jieceng">阶层型</button>
+	</div>
+
+	<script src="js/jquery-1.12.3.min.js"></script>
+	<script>
+		//设置一个存放所有元素的数组，后面存储行、列信息，下面组件dom时使用，只能这样
+		var table = [
+			"H", 1, 1,
+			"He",18, 1,
+			"Li",1, 2,
+			"Be",2, 2,
+			"B",13, 2,
+			"C",14, 2,
+			"N",15, 2,
+			"O",16, 2,
+			"F",17, 2,
+			"Ne",18, 2,
+			"Na",1, 3,
+			"Mg",2, 3,
+			"Al",13, 3,
+			"Si",14, 3,
+			"P",15, 3,
+			"S",16, 3,
+			"Cl",17, 3,
+			"Ar",18, 3,
+			"K", 1, 4,
+			"Ca", 2, 4,
+			"Sc", 3, 4,
+			"Ti", 4, 4,
+			"V", 5, 4,
+			"Cr", 6, 4,
+			"Mn", 7, 4,
+			"Fe",8, 4,
+			"Co",9, 4,
+			"Ni",10, 4,
+			"Cu", 11, 4,
+			"Zn", 12, 4,
+			"Ga", 13, 4,
+			"Ge", 14, 4,
+			"As", 15, 4,
+			"Se", 16, 4,
+			"Br", 17, 4,
+			"Kr", 18, 4,
+			"Rb", 1, 5,
+			"Sr", 2, 5,
+			"Y",  3, 5,
+			"Zr", 4, 5,
+			"Nb", 5, 5,
+			"Mo",  6, 5,
+			"Tc",  7, 5,
+			"Ru", 8, 5,
+			"Rh", 9, 5,
+			"Pd", 10, 5,
+			"Ag", 11, 5,
+			"Cd", 12, 5,
+			"In", 13, 5,
+			"Sn", 14, 5,
+			"Sb", 15, 5,
+			"Te", 16, 5,
+			"I",  17, 5,
+			"Xe", 18, 5,
+			"Cs", 1, 6,
+			"Ba", 2, 6,
+			"Lalu",3,6,
+			"Aclr",3,7,
+			"La", 4, 9,
+			"Ce", 5, 9,
+			"Pr", 6, 9,
+			"Nd", 7, 9,
+			"Pm", 8, 9,
+			"Sm", 9, 9,
+			"Eu", 10, 9,
+			"Gd", 11, 9,
+			"Tb", 12, 9,
+			"Dy",13, 9,
+			"Ho",14, 9,
+			"Er",15, 9,
+			"Tm",16, 9,
+			"Yb",17, 9,
+			"Lu", 18, 9,
+			"Hf",4, 6,
+			"Ta",5, 6,
+			"W",6, 6,
+			"Re", 7, 6,
+			"Os", 8, 6,
+			"Ir", 9, 6,
+			"Pt", 10, 6,
+			"Au", 11, 6,
+			"Hg",12, 6,
+			"Tl", 13, 6,
+			"Pb", 14, 6,
+			"Bi",15, 6,
+			"Po",16, 6,
+			"At",17, 6,
+			"Rn", 18, 6,
+			"Fr", 1, 7,
+			"Ra", 2, 7,
+			"Ac", 4, 10,
+			"Th", 5, 10,
+			"Pa", 6, 10,
+			"U", 7, 10,
+			"Np", 8, 10,
+			"Pu",9, 10,
+			"Am",10, 10,
+			"Cm",11, 10,
+			"Bk",12, 10,
+			"Cf",13, 10,
+			"Es", 14, 10,
+			"Fm",15, 10,
+			"Md", 16, 10,
+			"No", 17, 10,
+			"Lr",  18, 10,
+			"Rf", 4, 7,
+			"Db", 5, 7,
+			"Sg", 6, 7,
+			"Bh", 7, 7,
+			"Hs", 8, 7,
+			"Mt", 9, 7,
+			"Ds",10, 7,
+			"Rg", 11, 7,
+			"Cn", 12, 7,
+			"Uut", 13, 7,
+			"Fl",  14, 7,
+			"Uup", 15, 7,
+			"Lv", 16, 7,
+			"Uus", 17, 7,
+			"Uuo", 18, 7
+		];
+		//循环添加元素，把不同的、随机的元素在循环时添加进去。
+		var $unit = $(".unit");
+		for (var i = 0 ; i< table.length ; i+=3) {
+		
+			//孤儿节点
+			$spani = $("<span></span>");
+			$spani.html( table[i] );
+			//添加预设的随机属性
+			$spani.css({
+				"left": Math.random()*750-250+"px",
+				"top": Math.random()*750 - 250+"px",
+				"backgroundColor" : 'rgba(0,204,0,0.75)',
+				"transform":"translateZ(" +(Math.random()*3000-1000) +"px)"
+			});
+			$(".unit").append($spani);
+		}
+		//再次得到所有span
+		$span = $(".unit span");
+		// 设置默认样式
+		$span.each(function(i){
+				$(this).css({
+					"transform":"rotateY(" + 0 + "deg) rotateX(" + 0+ "deg) translateZ("+0+"px)" ,
+					"left": table[i*3+1]*45+25 +"px",
+					"top": table[i*3+2]*50-400 +"px",
+				})
+			})
+		//设置表格css样式
+		$(".table").click(function(){
+			$span.each(function(i){
+				$(this).css({
+					"transform":"rotateY(" + 0 + "deg) rotateX(" + 0+ "deg) translateZ("+0+"px)" ,
+					"left": table[i*3+1]*45+25 +"px",
+					"top": table[i*3+2]*50-400 +"px",
+				})
+			})
+		})
+		//设置球形样式表
+		$(".ball").click(function(){
+		$span.each(function(){
+			$(this).css({"left":500,"top": -100});
+		})
+		//这里的数组编程可以比较灵活，但是为什么没有像老邵那样建数组，因为此时DOM已经存在了，而且携带了唯一信息了，所以不能从新组件DOM，需要按顺序依次添加，不能每一层都从1还是循环。
+		var arr = [[0,1] , [1,4] , [5,10] , [15,15] , [30,19] , [49,22] , [71,19] , [90,15] , [105,10] , [115,4] , [119,1]];
+		//数组中套数组，每一个小数组中的第一项是起始DOM编号，第二个是此层有几个元素，只要把每一层的元素个数计算好就行了。一共是118个元素。
+		for(var i = 0 ; i < arr.length ; i++){
+			render(-i+5 , arr[i][0] , arr[i][1]);
+		}
+		//传入的有三个数据，依次是：
+		//1. 层编号：以最下层为-5，中间层为0，最上层为5，总共9层，为什么不是以最下层为1或0起始，因为下面要用到它直接乘以90°/5得到rotateX
+		//2. 起始编号，在数组里已经算好了
+		//3. 每层元素个数，下面循环使用
+		// 顺便说一下，这里的编程思维主要是活用数组读取数据避免摞楼的笨办法，找出每次遍历的共性，利用数组自带数据编号的特点灵活应用。
+		function render(floornumb , startnumb , amount){
+			for(var i = 0 ; i < amount ; i++){
+		//这里说一下，为什么上面循环没写(var i = startnumb ; i < startnumb+amount ; i++)，虽然结果也对。但此时i是元素编号，下面用i去乘每个元素的Y向角度的时候，i到后面会非常大，到118号元素的时候，实际rotateY就非常大，在后续变化类型动画时会Y轴疯狂旋转，大家想象一下。
+				$span.eq(i+startnumb).css({
+					"transform":"rotateY(" + (i*360/amount +Math.random()*4-2 ) + "deg)rotateX(" + ( floornumb*90/5 + Math.random()*6-3 ) + "deg) translateZ(300px)",
+				});
+			}
+		}
+		})
+		//螺旋很简单，就是把每个元素依次添加一个线性增加的，translateZ，考拉讲过了。
+		$(".luoxuan").click(function(){
+			$span.each(function(i){
+				$(this).css({
+					"transform":"rotateY(" + i*10 + "deg) rotateX(" + 0+ "deg) translateZ(300px)" ,"left":500,"top":i*4-350+"px" 
+				})
+			})
+		})
+		//阶层也很简单，大家以前做过粉碎轮播，那个里面为了计算每个元素的行号，列号，用到了parseInt(i/每行个数)和i%每行个数，此时无非是变成了三维，增加了一个层数，所以元素在那一层只要%每层的总个数既得所在层号。
+		$(".jieceng").click(function(){
+			$span.each(function(i){
+				var a = parseInt(i/25);//层号
+				var b = i%5;//行号
+				var c = (parseInt(i/5))%5;// 列号
+				$(this).css({
+					"transform":"rotateY(" + 0 + "deg) rotateX(" + 0+ "deg) translateZ("+ a* 150 +"px)" ,"left":b*150+200+"px","top":c*150-300+"px" 
+				})
+			})
+		})
+		//下面是鼠标拖拽。天下代码一大抄，抄考拉的，他的有小bug，我没调。勉强使着吧。。有时间改改。
+		var startX;
+ 		var startY;
+ 		$(document).mousedown(function(event){
+ 			startX = event.clientX;
+ 			startY = event.clientY;
+ 			// console.log(startX,startY);
+
+ 			$unit.css("transition","none");
+
+ 			$(document).mousemove(function(event){
+	 			var deltaX = event.clientX - startX;
+	 			var deltaY = event.clientY - startY;
+	 			// console.log(deltaX,deltaY);
+
+	 			$unit.css("transform","rotateX(" + -deltaY / 5 + "deg) rotateY(" + deltaX / 5 + "deg)");
+	 			return false;
+ 			});
+ 		});
+
+ 		$(document).mouseup(function(){
+			$(document).off("mousemove");
+
+			$unit.css("transition","all 0.5s ease 0s");
+		})
+ 		//其实这几个结构不难，关键在于理解3D运动的本质。大家一定要想明白一件事情就是在元素旋转的时候，它的三个坐标系方向也在随着他某个方向的旋转不断变化的，举个简单的例子：transform： rotateX(90deg) rotateY(90deg)  和 transform： rotateY(90deg) rotateX(90deg) 本质是不一样的。如果能非常其清楚，别的都不难。
+	</script>
+</body>
+</html>

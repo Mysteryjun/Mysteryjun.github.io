@@ -1,0 +1,534 @@
+.header {
+	height: 60px;
+	border: 1px solid #eff0f0;
+}
+.header .container {
+	width: 1190px;
+	margin: 0 auto;
+}
+.header .header-left {
+	float: left;
+}
+.header .header-right {
+	position: relative;
+	float: right;
+}
+.header span {
+	display: inline-block;
+	vertical-align: middle;
+	height: 60px;
+	line-height: 60px;
+	font-size: 12px;
+	color: #999;
+	cursor: pointer;
+}
+.header .weather:hover b,
+.header .date:hover b,
+.header .star:hover b,
+.header .header-right span:hover {
+	border-left: 1px solid #dedede;
+	border-right: 1px solid #dedede;
+	background: #f7f7f7;
+}
+.header .weather,
+.header .date,
+.header .star,
+.header .header-right span {
+	position: relative;
+	border: 1px solid transparent;
+}
+.header .weather a,
+.header span b {
+	/** 注意，不能设置宽度，要设置高度，边框和内边距 **/
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	position: relative;
+	z-index: 100;
+	padding: 0 10px;
+	height: 100%;
+	display: block;
+	font-weight: normal;
+}
+.header .weather span,
+.header .weather img {
+	padding: 0 5px;
+	position: relative;
+	z-index: 100;
+}
+.header .set-home {
+	padding: 2px 5px;
+	background-color: #07ac72;
+	color: white;
+	font-size: 12px;
+	height: auto;
+	line-height: 16px;
+}
+.header img {
+	vertical-align: middle;
+}
+.header ul {
+	float: right;
+	height: 60px;
+	overflow: hidden;
+}
+.header .city i {
+	padding: 3px 5px;
+	display: inline-block;
+	margin-left: 2px;
+}
+.header .header-right i {
+	padding: 10px;
+	display: inline-block;
+	background: url(../../../image/icons.png);
+	vertical-align: middle;
+	margin-right: 2px;
+}
+.header .user b {
+	background-position: -22px -111px;
+}
+.header .email b {
+	background-position: -90px -110px;
+}
+.header .browser b {
+	background-position: -155px -110px;
+}
+.header .skin b {
+	background-position: -237px -110px;
+}
+
+.header-right span b {
+	padding-left: 40px;
+	background: url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/v5/0W/zO/-A/q4/0Z/4/index_widthlg.png);
+
+}
+
+
+.header .email.open b {
+	background-color: #f7f7f7;
+}
+.header .email.open {
+	border-left: 1px solid #d9d9d9;
+	border-right: 1px solid #d9d9d9;
+}
+.email-layer {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	padding: 20px;
+	border: 1px solid #d9d9d9;
+	box-shadow: 2px 2px 0 #ccc;
+	background: #f7f7f7;
+	margin-top: -1px;
+	margin-left: -1px;
+	width: 228px;
+	display: none;
+	z-index: 99999999;
+}
+.email-layer.open {
+	display: block;
+}
+.email-layer input {
+	width: 115px;
+	margin-right: 5px;
+	height: 20px;
+	line-height: 20px;
+}
+.email-layer .containerEmail > div {
+	height: 26px;
+	line-height: 26px;
+	margin-bottom: 5px;
+}
+.header .email-layer span {
+	height: 26px;
+	line-height: 26px;
+}
+.email-layer #email-checkbox {
+	width: 17px;
+	height: 14px;
+    vertical-align: middle;
+}
+.email-layer span.choose-email {
+	border: 1px solid #ccc;
+	background: #fff;
+	text-align: left;
+	padding-left: 5px;
+	padding-right:40px;
+	height: 20px;
+	line-height: 20px;
+	position:absolute;
+}
+.email-layer span.choose-email:hover {
+	background: #fff;
+	border: 1px solid #ccc;
+}
+.email-layer .choose-email:after {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	content: "";
+	border-top: 4px solid #000;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-bottom: 4px solid transparent;
+
+}
+.email-layer ul {
+	position: absolute;
+    top: 45px;
+    left: 144px;
+    width: 113px;
+    border: 1px solid #ccc;
+    background: white;
+    height: auto;
+    z-index: 10;
+    display: none;
+}
+.email-layer ul.open {
+	display: block;
+}
+.email-layer ul li {
+	height: 24px;
+	padding-left: 5px;
+}
+.email-layer ul li:hover {
+	background: #efefef;
+}
+.email-layer li.not-email {
+	background: #efefef
+}
+
+
+/*************  skin  ****************/
+html, body {
+	height: 100%;
+}
+.skin {
+	display: none;
+}
+.skin .container {
+	width: 1140px;
+	margin: 0 auto;
+	font-size: 14px;
+}
+.skin .skin-header {
+	background: #f8f8f8;
+	height: 30px;
+}
+.skin .skin-header span {
+	float: right;
+	height: 30px;
+	line-height: 30px;
+	padding: 0 20px;
+	cursor: pointer;
+}
+.skin .skin-header .tabs {
+	float: left;
+	height: 30px;
+	line-height: 30px;
+	background: #dfe1e2;
+	color: #999;
+}
+.skin .skin-header .tabs:hover {
+	background: #656565;
+	color: #fff;
+}
+.skin .skin-header .no-use-btn {
+	color: #35a738;
+}
+.skin .skin-header .save-btn {
+	color: #fff;
+	background: #34a637 url(https://gss1.bdstatic.com/5eN1dDebRNRTm2_p8IuM_a/v5/Z8/OG/D1/3Q/dD/index_icon.png) no-repeat -263px -88px;
+	padding-left: 50px;
+}
+.skin .skin-header .cancel-btn {
+	color: #999;
+}
+.skin .skin-header .cancel-btn:hover {
+	color: red;
+}
+.skin .skin-content {
+	background: #dfe1e2;
+}
+.skin .skin-content ul {
+	padding: 20px 0;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+.skin .skin-content ul:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.skin .skin-content li {
+	position: relative;
+	float: left;
+	width: 180px;
+	margin: 10px 5px;
+	text-align: center;
+	cursor: pointer;
+}
+.skin .skin-content i {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 180px;
+	height: 98px;
+	background: #000;
+	opacity: .2;
+}
+.skin .skin-content li:hover i {
+	display: block;
+}
+.skin .skin-content p {
+	height: 28px;
+	line-height: 28px;
+	color: #666;
+}
+.skin .skin-content img {
+	width: 180px;
+	height: 98px;
+}
+/* login css */
+	div.mark{
+		position: fixed;
+		left:0;
+		top:0;
+		bottom:0;
+		right:0;
+		background: rgba(0,0,0,0.15);
+	}
+	.login{
+		position: absolute;
+		display: none;
+		z-index: 100;
+		left:400px;
+		top:100px;
+		width:530px;
+		height:446px;
+		background: white;
+		border: 1px solid #ccc;
+		z-index: 9999999;
+	}
+	.login.open{
+		display: block;
+	}
+	.login .header{
+		position: relative;
+		height:45px;
+		background: #ddd;
+		position: relative;
+	}
+	.login .header span:nth-of-type(1){
+		display:block;
+	    font-size: 16px;
+	    font-family: "宋体";
+	    font-weight: bold;
+	    color: #666;
+		background: url(https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/baidu_logo_24_056405eb.png) no-repeat 10px 5px;
+		height:100%;
+		width:80%;
+		padding-left:46px;
+		line-height: 44px;
+
+	}
+	.login .header span:nth-of-type(2){
+		display:block;
+		position: absolute;
+		right:20px;
+		top:-4px;
+		color: #333;
+		font-size: 24px;
+	}
+	.login .login-body{
+		width:100%;
+	}
+	.login .login-body .body-left{
+		width:250px;
+		float:left;
+	}
+	.login .login-body .body-left p{
+		height:80px;
+		line-height: 80px;
+		font-size: 16px;
+    	text-align: center;
+    	font-weight: bold;
+	}
+	.login .login-body .body-left div:nth-of-type(1){
+		width:136px;
+		height:136px;
+		margin-left:54px;
+		border:1px solid #ccc;
+		text-align: center;
+		padding-top:4px;
+	}
+	.login .login-body .body-left div:nth-of-type(1) img{
+		width:130px;
+		height:130px;
+	}
+	.login .login-body .body-left div:nth-of-type(2){
+		margin-top:18px;
+		margin-left: 48px;
+		display: inline-block;
+		color: #666;
+	    font-size: 12px;
+	    font-weight: normal;
+	    text-align: center;
+	    background: #f1f1f1;
+	}
+	.login .login-body .body-left div:nth-of-type(2) a{
+	font-size: 12px;
+    text-decoration: none;
+    color: #1b66c7;
+    font-family: Arial, Helvetica, STHeiti,"宋体";
+	}
+	.login .login-body .body-right{
+	float:right;
+	width:280px;
+	}
+	.login .login-body .body-right div:nth-child(1){
+		height:50px;
+		padding-right:10px;
+	}
+	.login .login-body .body-right div:nth-child(1) a{
+		display: inline-block;
+		float:right;
+		padding-top: 20px;
+		color: #666;
+    	cursor: pointer;
+    	font-size: 12px;
+    	text-decoration: none;
+    	position: relative;
+	}
+	.login .login-body .body-right div:nth-child(1) a::before{
+		display: block;
+		content:"";
+		background: url(https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/smsSwitchPhone_296e835b.png) no-repeat;
+		width:14px;
+		height:14px;
+		position: absolute;
+		left:-14px;
+		top:20px;
+	}
+	.login .login-body .body-right div:nth-child(1) a:hover{
+		text-decoration: underline;
+		color: #1b66c7;
+	}
+	.login .login-body .body-right form div:nth-child(1),.login .login-body .body-right form div:nth-child(2){
+		width:218px;
+		height:40px;
+		padding-right: 50px;
+		margin-bottom: 10px;
+	}
+	.login .login-body .body-right form div:nth-child(1) input,.login .login-body .body-right form div:nth-child(2) input{
+		outline: none;
+		display: block;
+		width:238px;
+		height:40px;
+		line-height:40px;
+		border:none;
+		padding-right:30px;
+		text-indent: 30px;
+		border: 1px solid #ccc;
+		
+	}
+	.login .login-body .body-right form div:nth-child(1) input:focus,.login .login-body .body-right form div:nth-child(2) input:focus{
+		border: 1px solid #488ee7;
+	}
+	.login .login-body .body-right form div:nth-child(1) input{
+		background: url(https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/input_icons_24_915272c4.png) no-repeat 3px -61px;
+	}
+	.login .login-body .body-right form div:nth-child(2) input{
+		background: url(https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/input_icons_24_915272c4.png) no-repeat 3px -142px;
+	}
+	.login .login-body .body-right form div:nth-child(1) input:focus{
+		background: url(https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/input_icons_24_915272c4.png) no-repeat 3px -101px;
+	}
+	.login .login-body .body-right form div:nth-child(2) input:focus{
+		background: url(https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/input_icons_24_915272c4.png) no-repeat 3px -182px;
+	}
+	.login .login-body .body-right form div:nth-child(3){
+		margin-top:20px;
+		width:100%;
+	}
+	.login .login-body .body-right form div:nth-child(3) label{
+		color: #666;
+    	font-size: 12px;
+    	margin-left:4px;
+    	position: relative;
+    	top:-2px;
+	}
+	.login .login-body .body-right form div:nth-child(3) a{
+		float:right;
+		padding-right:10px;
+		font-size: 12px;
+	    text-decoration: none;
+	    color: #1b66c7;
+	    font-family: Arial, Helvetica, STHeiti,"宋体";
+	}
+	.login .login-body .body-right form div:nth-child(3) a:hover{
+		text-decoration: underline;
+	}
+	.login .login-body .body-right form button{
+		display: block;
+		width:270px;
+		margin-top:10px;
+		height:;
+		background-color: #3f89ec;
+		height: 48px;
+	    font-size: 16px;
+	    font-weight: bold;
+	    cursor: pointer;
+	    color: #fff;
+	    background: #3f89ec;
+	    border-radius: 3px;
+	    border: none;
+	    -moz-border-radius: 3px;
+	    -webkit-border-radius: 3px;
+	    transition: .3s;
+	    -moz-transition: .3s;
+	    -o-transition: .3s;
+	    -webkit-transition: .3s;
+	}
+	.login .login-body .body-right form button:hover{
+		 background: #3f89e2;
+	}
+	.login .login-body .body-right form a.regist{
+		display: block;
+		font-size: 12px;
+	    text-decoration: none;
+	    color: #1b66c7;
+	    font-family: Arial, Helvetica, STHeiti,"宋体";
+	    cursor: pointer;
+		margin-left:222px;
+		margin-top:24px;
+	}
+	.login .body-right-foot{
+		margin-top:40px;
+		border-top: 1px solid #ccc;
+	}
+	.login .body-right-foot p{
+		color: #666;
+    	font-size: 12px;
+    	font: 12px/18px arial,"\5b8b\4f53",sans-serif,"Microsoft YaHei",tahoma;
+    	padding-top:10px;
+	}
+	.login .body-right-foot a{
+		display:inline-block;
+	    margin-right: 4px;
+	    color: #00C;
+	    text-decoration: underline;
+	    padding-left: 24px;
+	    cursor: pointer;
+	    font-size: 12px;
+	    height:24px;
+	}
+	.login .body-right-foot a:nth-of-type(1){
+		margin-top:10px;
+		margin-right:5px;
+		background: url(https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/pass_login_icons_7241098f.png) no-repeat -88px 0;
+	}
+	.login .body-right-foot a:nth-of-type(2){
+		margin-top:10px;
+		background: url(https://ss0.bdstatic.com/5LMZfyabBhJ3otebn9fN2DJv/passApi/img/pass_login_icons_7241098f.png) no-repeat -64px 0;
+	}

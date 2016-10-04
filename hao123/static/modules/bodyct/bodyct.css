@@ -1,0 +1,65 @@
+	.menus{
+		width:1190px;
+		height:38px;
+		margin: 30px auto;
+		position: relative;
+	}
+	.menus ul{
+		list-style-type: none;
+		height: 38px;
+		border-top: 2px solid #099e6a;
+		border-bottom: 1px solid #eaeaea;
+		background-color: #fcfcfc;
+		line-height: 38px;
+		overflow: hidden;
+	}
+
+	.menus ul li{
+	position: relative;
+	width: 111px;
+	height: 38px;
+    line-height: 38px;
+    float: left;
+    text-align: center;
+    cursor: pointer;
+	}
+	.menus ul li span.menu-split{
+		display: block;
+		width: 1px;
+		height: 20px;
+		position:absolute;
+		right:0px;
+		top:9px;
+		background: #eeeeee;
+	}
+	.menus ul li:last-child{
+		width:110px;
+	}
+	.menus ul li a{
+		display: block;
+		text-decoration: none;
+		height: 38px;
+		color: #333;
+		font-size: 16px;
+		position: relative;
+	}
+	.menus ul li a:hover{
+		color:#118850;
+		z-index: 100;
+	}
+	.menus ul li.first a{
+		background: #118850;
+		color:white;
+	}
+	.menus ul li:nth-child(1){
+		width:81px;
+	}
+	.menus div.youxi{
+		position: absolute;
+		left:640px;
+		top:40px;
+		width:111px;
+		height:60px;
+		display: none;
+		z-index: 120;
+	}

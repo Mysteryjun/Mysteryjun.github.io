@@ -1,0 +1,38 @@
+	#sliderTop{
+		width: 70px;
+		height: 330px;
+		position: fixed;
+		right:0;
+		bottom: 0;
+		z-index:9999999999;
+	}
+	#sliderTop div:nth-child(1){
+		width: 70px;
+		height: 120px;
+		position: relative;
+		padding-right: 1px;
+		left: -7px;
+		top: 6px;
+		cursor: pointer;
+	}
+	#sliderTop div:nth-child(1) img{
+		text-align: center;
+	}
+	#sliderTop .rightBar{
+		height: 220px;
+	}
+	#sliderTop .rightBar a{
+		color: #666;
+		background: white;
+		display: block;
+		width:60px;
+		text-align: center;
+	    font-size: 12px;
+	    height: 30px;
+	    line-height: 30px;
+	    margin-bottom: 4px;   
+	}
+	#sliderTop .rightBar a:hover{
+		color: #118850;
+		 cursor:pointer;
+	}

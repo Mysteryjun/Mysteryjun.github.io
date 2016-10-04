@@ -1,0 +1,63 @@
+<div class="app-create-user">
+	<div class="main-inner">
+		<h2>新建用户</h2>
+		<form name="user_form" ng-submit="submit()">
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="user_name">用户名：</label>
+				</div>
+				<div class="col-lg-5">
+					<input type="text" class="form-control" name="username" ng-model="user.username" id="user_name" required placeholder="请输入您的昵称">
+				</div>
+				<div class="col-lg-4">
+					<span ng-show="user_form.username.$dirty && user_form.username.$invalid">用户名是必填的</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="pass_word">密&emsp;码：</label>
+				</div>
+				<div class="col-lg-5">
+					<input type="password" class="form-control" name="password" ng-model="user.password" id="pass_word" required placeholder="请输入用户密码">
+				</div>
+				<div class="col-lg-4">
+					<span ng-show="user_form.password.$dirty && user_form.password.$invalid">密码是必填项</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="tel">电&emsp;话：</label>
+				</div>
+				<div class="col-lg-5">
+					<input type="text" class="form-control" name="telephone" ng-model="user.telephone" id="tel" ng-pattern="/^1\d{10}$/" placeholder="请输入电话号码">
+				</div>
+				<div class="col-lg-4">
+					<span ng-show="user_form.telephone.$dirty && user_form.telephone.$invalid">电话号码是以1开头11为数字</span>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<label>性&emsp;别：</label>
+				</div>
+				<div class="col-lg-5">
+					<label>男&emsp;<input type="radio" name="sex" ng-model="user.sex" value="male"></label>
+					&emsp;&emsp;
+					<label>女&emsp;<input type="radio" name="sex" ng-model="user.sex" value="female"></label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<label for="info">简&emsp;介：</label>
+				</div>
+				<div class="col-lg-5">
+					<textarea name="info" id="info" class="form-control" ng-model="user.info" placeholder="请输入用户简介"></textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-offset-3 col-lg-5">
+					<button type="submit" ng-disabled="user_form.$invalid" class="btn btn-success">提交</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
